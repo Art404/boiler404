@@ -25,7 +25,7 @@ DEV:
 BUILD:
 
 * `npm run build`
-* `firebase_url=XXX NODE_ENV=production && npm start`
+* `firebase_url=XXX NODE_ENV=production npm start`
 * VISIT `localhost:3000`
 
 DEPLOY:
