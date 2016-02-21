@@ -30,3 +30,30 @@
   left: 10px;
   top: -2px;
 }
+
+.Navigation-github {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  height: $NAV_HEIGHT;
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(flex-end);
+  color: inherit;
+}
+
+.Navigation-github-text {
+  color: #666;
+  font-size: 14px;
+  font-family: Helvetica, arial, sans-serif;
+  margin-right: 10px;
+}
+
+.Navigation-github-icn {
+  height: 25px;
+  width: 25px;
+  background-image:url('../images/GitHub-Mark-64px.png');
+  background-size: contain;
+  opacity: 0.7;
+}
+

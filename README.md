@@ -367,6 +367,7 @@ additional | `Object` | `null` | Any meta data not existant on the source manual
 # TODO
 
 * Fix build process. Because Heroku doesnt have cli capabilities, we use a hacky `deploy.js` script on postinstall. This forces us to include dev dependencies in the regular dependencies, adds deployment bloat & looks weird.
+* Centralize image assets. Right now it's a mix of CDNs, local images, and hotlinks lol
 * Make menu icons + colors come from config. Right now they are hardcoded.
 * Support `Row` on all pages, currently limited to front page (these should be dynamically created)
 * Clean up CSS

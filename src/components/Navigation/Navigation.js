@@ -29,6 +29,12 @@ class Navigation extends React.Component {
             <Logo />
           </Link>
         </div>
+        <a className="Navigation-github" href="http://github.com/art404/platform404" target="_blank">
+          <div className="Navigation-github-text">
+            {'View on GitHub'}
+          </div>
+          <div className="Navigation-github-icn" />
+        </a>
       </nav>
     )
   }

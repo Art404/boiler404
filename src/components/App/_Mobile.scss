@@ -137,7 +137,6 @@
     position: relative;
     left: -20px;
   }
-  
 }
 
 
@@ -151,6 +150,9 @@
       &:nth-child(odd) {
         margin-right: 0;
       }
+    }
+    .Navigation-github-text {
+      display: none;
     }
   }
 }
