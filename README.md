@@ -4,12 +4,12 @@
 
 
 # platform404
--------------
+
 Front-end renderer app for [Art404](http://www.art404.com)'s CMS platform. The aim is to provide a navigable, contextualized display of our work while allowing third party social networks to host the majority of our content. Projects can then be posted naturally on networks with audiences such as tumblr, instagram or github and then be packaged up with the additional metadata for display in a portfolio context. 
 
 
 # Usage
--------------
+
 
 ### Environment Variables
 
@@ -35,7 +35,7 @@ DEPLOY:
 
 
 # Configuration
--------------
+
 
 ### Menu Config
 
@@ -294,7 +294,6 @@ additional | 'Object' | `null` | Any meta data not existant on the source manual
 
 
 # Tech Stack
--------------
 
 * [firebase](https://firebase.com/): database provider
 * [ES6](https://babeljs.io/docs/learn-es6/): for next level js
@@ -311,7 +310,6 @@ additional | 'Object' | `null` | Any meta data not existant on the source manual
 
 
 # STRUCTURE
--------------
 
 ```
 .
@@ -340,7 +338,7 @@ additional | 'Object' | `null` | Any meta data not existant on the source manual
 
 
 # TO DO
--------------
+
 * Fix build process. Because Heroku doesnt have cli capabilities, we use a hacky `deploy.js` script on postinstall. This forces us to include dev dependencies in the regular dependencies, which slows build time.
 * Make menu icons + colors come from config. Right now they are hardcoded.
 * Support `Row` on all pages, currently limited to front page (these should be dynamically created)
@@ -350,14 +348,13 @@ additional | 'Object' | `null` | Any meta data not existant on the source manual
 
 
 # FUTURE
--------------
+
 * Cookie based "seen" projects with total counter
 * Dynamically change database source with special route
 * More banner + row + card types
 
 
 # License
--------------
 
 The MIT License (MIT)
 
