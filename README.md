@@ -320,16 +320,16 @@ additional | `Object` | `null` | Any meta data not existant on the source manual
 ├── /src/                        # Source code of the client application
 │   ├── /actions/                # Action creators that allow to trigger a dispatch to stores
 │   ├── /components/             # React components
-|       |── /__tests__/          # React components unit tests
+|       |── /test/               # React components unit tests
 │   ├── /images/                 # Image assets
 │   ├── /stores/                 # Stores contain the application state and logic
 │   ├── /styles/                 # CSS directory, includes core styles + bourbon
-│   ├── alt.js                   # Instance of [Alt](http://alt.js.org/)
+│   ├── alt.js                   # Instance of alt.js
 │   ├── client.js                # Client side app renderer script
 │   ├── routes.js                # React router configuration
 │   ├── index.tpl.html           # HTML template
 └── .babelrc                     # Babel config
-└── .eslintrc                    # Es lint rc
+└── .eslintrc                    # eslint config
 └── deploy                       # Special utility script for Heroku deployment
 └── favicon.ico                  # Favicon file
 └── package.json                 # The list of 3rd party libraries and utilities
