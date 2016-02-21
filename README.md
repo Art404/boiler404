@@ -321,7 +321,7 @@ additional | `Object` | `null` | Any meta data not existant on the source manual
 
 # Tech Stack
 
-* [heroku](https:/heroku.com/): hosting & deployment
+* [heroku](https://heroku.com/): hosting & deployment
 * [firebase](https://firebase.com/): database provider
 * [Babel](https://babeljs.io/docs/learn-es6/): for next level js
 * [SASS](http://sass-lang.com/): for next level css
