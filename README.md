@@ -36,6 +36,7 @@ DEPLOY:
 
 # Configuration
 
+All configuration is stored and read from firebase. Refer to `firebase_url` in Heroku for appropriate firebase app. 
 
 ### Menu Config
 
@@ -290,15 +291,16 @@ source | `Object` | none | Contains relevant info from a project's source (where
 stats | `Object` | `null` | Statistical info about project
 tags | `Array` | none | Tags are used to sort projects and create relationships
 media | `Array` | `null` | External media links, with types and alt sizes if available
-additional | 'Object' | `null` | Any meta data not existant on the source manually added by contributor
+additional | `Object` | `null` | Any meta data not existant on the source manually added by contributor
 
 
 # Tech Stack
 
+* [heroku](https:/heroku.com/): hosting & deployment
 * [firebase](https://firebase.com/): database provider
-* [ES6](https://babeljs.io/docs/learn-es6/): for next level js
+* [Babel](https://babeljs.io/docs/learn-es6/): for next level js
 * [SASS](http://sass-lang.com/): for next level css
-* [bourbon](http://bourbon.io/): for next next level css
+* [bourbon](http://bourbon.io/): for next level sass
 * [webpack](https://github.com/webpack/webpack): instagram uses it
 * [react](https://github.com/facebook/react): sips React kool aid once
 * [react-router](https://github.com/rackt/react-router): routing solution
@@ -309,7 +311,7 @@ additional | 'Object' | `null` | Any meta data not existant on the source manual
 * [express](http://expressjs.com/): servers, servers, servers
 
 
-# STRUCTURE
+# Structure
 
 ```
 .
@@ -337,9 +339,9 @@ additional | 'Object' | `null` | Any meta data not existant on the source manual
 ```
 
 
-# TO DO
+# TODO
 
-* Fix build process. Because Heroku doesnt have cli capabilities, we use a hacky `deploy.js` script on postinstall. This forces us to include dev dependencies in the regular dependencies, which slows build time.
+* Fix build process. Because Heroku doesnt have cli capabilities, we use a hacky `deploy.js` script on postinstall. This forces us to include dev dependencies in the regular dependencies, adds deployment bloat & looks weird.
 * Make menu icons + colors come from config. Right now they are hardcoded.
 * Support `Row` on all pages, currently limited to front page (these should be dynamically created)
 * Clean up CSS
@@ -347,7 +349,7 @@ additional | 'Object' | `null` | Any meta data not existant on the source manual
 * Write Tests
 
 
-# FUTURE
+# Future
 
 * Cookie based "seen" projects with total counter
 * Dynamically change database source with special route
