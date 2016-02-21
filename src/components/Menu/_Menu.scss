@@ -1,0 +1,205 @@
+@import './_Squad';
+
+.Menu {
+  position: absolute;
+  left: 0;
+  float: left;
+  font-family: 'Roboto', 'Helvetica', 'Arial';
+  font-size: 10px;
+  height: 50px;
+  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  z-index: 99999999;
+  background: rgba(245, 245, 245, 0.95);
+  cursor: pointer;
+  top: 50px;
+}
+
+.Menu-inner {
+  position: relative;
+  width: 200px;
+  z-index: 100;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: rgba(245, 245, 245, 0.95);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+.Menu-item {
+  width: 100%;
+  position: absolute;
+  background: rgba(245, 245, 245, 0.95);
+  z-index: 10;
+}
+
+.Menu-link {
+  float: left;
+  text-transform: capitalize;
+  width: 100%;
+  position: relative;
+  @include display(flex);
+  @include align-items(center);
+  @include flex(1 0 0);
+  color: black;
+  &:hover,
+  &.--active {
+    color: white;
+  }
+}
+
+.Menu-submenu {
+  float: left;
+  width: calc(100% - 25px);
+  margin-left: 25px;
+  padding-top: 10px;
+}
+
+.Menu-submenu-link {
+  font-size: 18px;
+  line-height: 20px;
+  padding: 8px 12px 8px 23px;
+  color: black;
+  text-align: left;
+  float: left;
+  width: 100%;
+  &:hover {
+    background-color: rgba(0,0,0,0.05);
+  }
+}
+
+.Menu-return {
+  position: absolute;
+  left: 0;
+  width: 25px;
+  background-color: #E2E2E2;
+  background-image: url('../images/arrow.png');
+  background-size: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Menu-item-icon-wrap {
+  position: relative;
+  width: 70px;
+  height: 50px;
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(center);
+
+  .Menu-item-icon {
+    display: block;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.Menu-label {
+  padding-left: 10px;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+
+.home .Menu-label {
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.Menu-about-link {
+  display: block;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: forestgreen;
+}
+
+// COLORS & ICONS
+
+.home  {
+  .Menu-link,
+  .Menu-item-icon-wrap {
+    background: rgb(68, 68, 68);
+    color: white;
+  }
+}
+
+
+.code {
+  .Menu-link:hover,
+  .Menu-link.--active,
+  .Menu-item-icon-wrap {
+    background: $navPink;
+  }
+  .Menu-item-icon {
+    background-image: url('../images/apps_icon.png');
+    background-size: contain;
+    background-position: center;
+  }
+  .Menu-submenu-link.--colored {
+    color: $navPink;
+  }
+}
+
+.sculpture {
+  .Menu-link:hover,
+  .Menu-link.--active,
+  .Menu-item-icon-wrap {
+    background: $navOrange;
+  }
+  .Menu-item-icon {
+    background-image: url('../images/sculptures_icon.png');
+    background-size: contain;
+    background-position: center;
+  }
+  .Menu-submenu-link.--colored {
+    color: $navOrange;
+  }
+}
+
+.installation {
+  .Menu-link:hover,
+  .Menu-link.--active,
+  .Menu-item-icon-wrap {
+    background: $navBlue;
+  }
+  .Menu-item-icon {
+    background-image: url('../images/installations_icon.png');
+    background-size: contain;
+    background-position: center;
+  }
+  .Menu-submenu-link.--colored {
+    color: $navBlue;
+  }
+}
+
+.performance {
+  .Menu-link:hover,
+  .Menu-link.--active,
+  .Menu-item-icon-wrap {
+    background: $navGreen;
+  }
+  .Menu-item-icon {
+    background-image: url('../images/performance_icon.png');
+    background-size: contain;
+    background-position: center;
+  }
+  .Menu-submenu-link.--colored {
+    color: $navGreen;
+  }
+}
+
+.video {
+  .Menu-link:hover,
+  .Menu-link.--active,
+  .Menu-item-icon-wrap {
+    background: $navRed;
+  }
+  .Menu-item-icon {
+    background-image: url('../images/videos_icon.png');
+    background-size: contain;
+    background-position: center;
+  }
+  .Menu-submenu-link.--colored {
+    color: $navRed;
+  }
+}

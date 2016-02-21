@@ -1,0 +1,48 @@
+@mixin lowTier { z-index: 100; }
+@mixin midTier { z-index: 500; }
+@mixin highTier { z-index: 1000; }
+
+@mixin fadeOut { opacity: 0; }
+@mixin fadeHalf { opacity: 0.5; }
+@mixin fadeIn { opacity: 1; }
+
+@mixin btn {
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+$NAV_HEIGHT: 50px;
+
+html {
+  font-weight: 100;
+  font-size: 1em;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.375;
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  margin: 0;
+  height: 100vh;
+  position: relative;
+  float: left;
+  font-size: 16px;
+  background: #eeeeee;
+}
+
+#app {
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
