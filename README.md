@@ -40,11 +40,11 @@ Without authorizing, the database is read only, with the following endpoints ava
 
 Endpoint | Description
 :------- | :----------
-db | repository of all projects where each key is a project ID
+db | repository of all projects where each key is a project ID.
 main | holds the sites page configuration. eventually we will have alternate page configurations for different members / purposes so `main` will be distinguished.
-squad | array of members with the following self-explainable properties: `name`, `role`, `url`
+squad | array of members with the following self-explainable properties: `name`, `role`, `url`.
 
-You can access the api from any node app like so:
+You can access the api from any node app with firebase like so:
 
 ```js
 var Firebase = require('firebase');
@@ -58,6 +58,8 @@ fireAssAPI.child('db').once('value', doSomeCrazyShitWithProjectData);
  
 ```
 
+see [firebase docs](https://www.firebase.com/docs/) for more on using firebase.
+
 
 # Configuration
 
@@ -65,9 +67,9 @@ All configuration is stored and read from firebase. Refer to `firebase_url` in H
 
 ### Menu Config
 
-The `pages` object in `main` is what determines the category heirarchy of the site's navigation.
+The `pages` object determines the category heirarchy of the site's navigation.
 
-eg:
+eg given a config that looks like:
 
 ```js
 {
@@ -93,30 +95,6 @@ eg:
       }
     ]
   },
-  "design": {
-    "label": "Design",
-    "url": "design",
-    "icon": "design_icon.png",
-    "layout": {
-      // ...
-    },
-    "submenu": [
-      {
-        "bold": true,
-        "color": true,
-        "label": "Web",
-        "url": "web"
-      },
-      {
-        "label": "Print",
-        "url": "print"
-      },
-      {
-        "label": "Interactive",
-        "url": "interactive-design"
-      }
-    ]
-  },
   // required, becomes highest level nav link, links to home
   "home": {
     "label": "WORK",
@@ -127,7 +105,7 @@ eg:
 }
 ```
 
-Will produce a site with `Apps` & `Design` as top level menu links. Within `Apps`, the submenu links will be `javascript`, `python`, and `css`. The `home` object will become the first link the menu and will serve as an anchor to the homepage, thus does not need a submenu or url.
+The `home` object will become the first link in the menu and will serve as an anchor to the homepage. Any other objects, in this case `Apps`, will become the rest of the links in the menu.
 
 
 #### Menu Config Properties
@@ -196,11 +174,6 @@ eg:
         },
         {
           "content": {
-            "projects": [
-              "121467069611",
-              "120898900716",
-              "120898177576"
-            ],
             "subtitle_tags": [
               "branding",
               "identity",
@@ -250,51 +223,76 @@ While projects come from various sources, all of their data models are adopted t
 
 ```js
 {
-  "title": "5 Million 1 Terabyte",
-  "id": 136478152056,
-  "url": "5m1t",
-  "priority": 900,
-  "text": "A hard-drive that has 5 million dollars worth of information acquired from torrented files",
-  "created_at": "2016-01-02 20:17:24 GMT",
-  "type": "media",
-  "thumbnail": "http://56.media.tumblr.com/5449b95c9e036d38fd7c31d4a213784d/tumblr_o0cdp0Ml1P1sz85suo1_250.png",
-  "source": {
-    "platform": "tumblr",
-    "author": "art404",
-    "author_avatar": "http://pbs.twimg.com/profile_images/652614485002207232/s5s3R6ff_normal.jpg",
-    "author_url": "http://art404.tumblr.com",
-    "url": "http://art404.tumblr.com/5m1t"
-  },
-  "stats": {
-    "views": null,
-    "likes": 72,
-    "reshares": 112
-  },
-  "tags": [
-    "hardware",
-    "data mining",
-    "torrents",
-    "big data",
-    "piracy"
+  "title" : "Netflix and Chill Room",
+  "id" : "138398520861",
+  "created_at" : "2016-01-31T08:58:35-05:00",
+  "priority" : 0,
+  "tags" : [
+    "performance",
+    "social",
+    "installation",
+    "brand"
   ],
-  "media": [
-    {
-      "type": "photo",
-      "url": "http://56.media.tumblr.com/5449b95c9e036d38fd7c31d4a213784d/tumblr_o0cdp0Ml1P1sz85suo1_400.png",
-      "embed": null,
-      "alt_sizes": {
-        "small": "http://56.media.tumblr.com/5449b95c9e036d38fd7c31d4a213784d/tumblr_o0cdp0Ml1P1sz85suo1_75sq.png",
-        "medium": "http://56.media.tumblr.com/5449b95c9e036d38fd7c31d4a213784d/tumblr_o0cdp0Ml1P1sz85suo1_250.png",
-        "large": "http://56.media.tumblr.com/5449b95c9e036d38fd7c31d4a213784d/tumblr_o0cdp0Ml1P1sz85suo1_500.png"
+  "text" : "The Netflix &amp; Chill Airbnb Room is a project presented by ART404 + Tom Galle. With this project we bring the famous ‘Netflix &amp; Chill meme&rsquo; to life and offer it as an IRL experience that people can rent for a night on AirBnB. ",
+  "type" : "media",
+  "url" : "netflix-and-chill-room",
+  "additional" : {
+    "collaborators" : [
+      {
+        "collabee" : "Tom Galle",
+        "url" : "http://tomgalle.com"
       }
+    ],
+    "embeds" : [
+      {
+        "embed" : "<blockquote class=\"twitter-tweet\" lang=\"en\"><p lang=\"en\" dir=\"ltr\">Impressive Netflix &amp; Chill listing, <a href=\"https://twitter.com/artnotfound\">@artnotfound</a> <a href=\"https://twitter.com/tomgalle\">@tomgalle</a>. We&#39;ve got some (G-rated) ideas on how to up the game. <a href=\"https://t.co/QiOoQlYP0S\">https://t.co/QiOoQlYP0S</a></p>&mdash; Airbnb (@Airbnb) <a href=\"https://twitter.com/Airbnb/status/693237148292509696\">January 30, 2016</a></blockquote><script async src=\"//platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>",
+        "id_str" : "693237148292509696",
+        "type" : "tweet"
+      }
+    ],
+    "press" : [
+      {
+        "publication" : "Tech Insider",
+        "url" : "http://www.techinsider.io/netflix-and-chill-airbnb-in-new-york-city-2016-1"
+      }
+    ],
+    "project_link" : "https://www.airbnb.com/rooms/10831922"
+  },
+  "media" : [
+    {
+      "alt_sizes" : {
+        "large" : {
+          "height" : 854,
+          "url" : "http://41.media.tumblr.com/ad1473210777ef310a56cb995297bbe7/tumblr_o1t7lnKjNh1r1ubs7o1_1280.png",
+          "width" : 1280
+        },
+        "medium" : {
+          "height" : 167,
+          "url" : "http://40.media.tumblr.com/ad1473210777ef310a56cb995297bbe7/tumblr_o1t7lnKjNh1r1ubs7o1_250.png",
+          "width" : 250
+        },
+        "small" : {
+          "height" : 75,
+          "url" : "http://41.media.tumblr.com/ad1473210777ef310a56cb995297bbe7/tumblr_o1t7lnKjNh1r1ubs7o1_75sq.png",
+          "width" : 75
+        }
+      },
+      "height" : 334,
+      "type" : "photo",
+      "url" : "http://41.media.tumblr.com/ad1473210777ef310a56cb995297bbe7/tumblr_o1t7lnKjNh1r1ubs7o1_500.png",
+      "width" : 500
     }
   ],
-  "additional": {
-    "collaborators": [],
-    "embeds": [],
-    "comments": [],
-    "press": [],
-    "project_link": ""
+  "source" : {
+    "author" : "art404",
+    "author_url" : "http://art404.tumblr.com",
+    "platform" : "tumblr",
+    "url" : "http://www.art404.com/post/138398520861/netflix-and-chill-room"
+  },
+  "stats" : {
+    "likes" : 1231,
+    "reshares": 7200,
+    "views": 9000
   }
 }
 ```
@@ -339,7 +337,6 @@ additional | `Object` | `null` | Any meta data not existant on the source manual
 # Structure
 
 ```
-.
 ├── /dist/                       # Compiled output
 ├── /node_modules/               # 3rd-party libraries and utilities
 ├── /src/                        # Source code of the client application
@@ -366,12 +363,12 @@ additional | `Object` | `null` | Any meta data not existant on the source manual
 
 # TODO
 
-* Fix build process. Because Heroku doesnt have cli capabilities, we use a hacky `deploy.js` script on postinstall. This forces us to include dev dependencies in the regular dependencies, adds deployment bloat & looks weird.
+* Fix build process. Because Heroku doesnt have cli capabilities, we use a hacky `deploy.js` script on postinstall. This forces us to include dev dependencies in the regular dependencies, adds deployment bloat & looks weird
 * Centralize image assets. Right now it's a mix of CDNs, local images, and hotlinks lol
-* Make menu icons + colors come from config. Right now they are hardcoded.
+* Make menu icons + colors come from config. Right now they are hardcoded
 * Support `Row` on all pages, currently limited to front page (these should be dynamically created)
 * Clean up CSS
-* Refactor / comment some of the more complex bits like the layout creator, menu and project pages.
+* Refactor / comment some of the more complex bits like the layout creator, menu and project pages
 * Write Tests
 
 
@@ -386,7 +383,7 @@ additional | `Object` | `null` | Any meta data not existant on the source manual
 
 The MIT License (MIT)
 
-Copyright (c) 2015 ART404
+Copyright (c) 2016 ART404
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
