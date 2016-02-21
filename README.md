@@ -34,6 +34,31 @@ DEPLOY:
 * `git push heroku master`
 
 
+# API
+
+Without authorizing, the database is read only, with the following endpoints available:
+
+Endpoint | Description
+:------- | :----------
+db | repository of all projects where each key is a project ID
+main | holds the sites page configuration. eventually we will have alternate page configurations for different members / purposes so `main` will be distinguished.
+squad | array of members with the following self-explainable properties: `name`, `role`, `url`
+
+You can access the api from any node app like so:
+
+```js
+var Firebase = require('firebase');
+var fireAssAPI = new Firebase(process.env.firebase_url);
+
+function doSomeCrazyShitWithProjectData (data) {
+  console.log('holy shit ->', data.val());
+}
+
+fireAssAPI.once('value', doSomeCrazyShitWithProjectData);
+ 
+```
+
+
 # Configuration
 
 All configuration is stored and read from firebase. Refer to `firebase_url` in Heroku for appropriate firebase app. 
