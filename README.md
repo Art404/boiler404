@@ -54,7 +54,7 @@ function doSomeCrazyShitWithProjectData (data) {
   console.log('holy shit ->', data.val());
 }
 
-fireAssAPI.once('value', doSomeCrazyShitWithProjectData);
+fireAssAPI.child('db').once('value', doSomeCrazyShitWithProjectData);
  
 ```
 
