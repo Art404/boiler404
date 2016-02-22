@@ -50,18 +50,22 @@ const createRows = (rows, db) => {
     let projects = [], usedProjects = []
 
     var waitForProjects = (cb) => {
-      if (r.content.projects) {
-        r.content.projects.forEach((d) => {
-          if (projects.length < 8 && usedProjects.indexOf(db[d].id) === -1) {
-            let dedupe = dedupeThumbnails(db, cloneDeep(db[d]), usedPics)
-            let proj = dedupe.proj
-            usedPics = dedupe.usedPics
-            projects.push(proj)
-            usedProjects.push(proj.id)
-            cb()
-          }
-        })
-      } else cb()
+      if (!r.content.projects) {
+        cb()
+        return
+      }
+
+      r.content.projects.forEach((d) => {
+        if (projects.length < 8 && usedProjects.indexOf(db[d].id) === -1) {
+          let dedupe = dedupeThumbnails(db, cloneDeep(db[d]), usedPics)
+          let proj = dedupe.proj
+          usedPics = dedupe.usedPics
+          projects.push(proj)
+          usedProjects.push(proj.id)
+        }
+      })
+
+      cb()
     }
 
     waitForProjects(() => {

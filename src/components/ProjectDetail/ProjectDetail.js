@@ -1,6 +1,7 @@
 import React from 'react'
 import {find, isEmpty, isEqual} from 'lodash'
 import Tweet from './Tweet'
+import Instagram from './Instagram'
 import Carousel from '../Carousel/Carousel'
 import ProjectRelated from './ProjectRelated'
 
@@ -61,6 +62,7 @@ class ProjectDetail extends React.Component {
             {additional[k].map((a, j) => {
               if (a.type === 'tweet') return <Tweet id={a.id_str} key={`embed-html-${a.embed}`} />
               else if (a.type === 'video') return <div className="ProjectDetail-video" dangerouslySetInnerHTML={{__html: a.embed}} key={`embed-html-${a.embed}`}/>
+              else if (a.type === 'instagram') return <Instagram embed={a.embed} key={`embed-html-${a.embed}`} />
             })}
             </div>
           )

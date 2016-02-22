@@ -33,7 +33,7 @@ class Navigation extends React.Component {
           <div className="Navigation-github-text">
             {'View on GitHub'}
           </div>
-          <div className="Navigation-github-icn" />
+          <div className='Navigation-github-icn' />
         </a>
       </nav>
     )
