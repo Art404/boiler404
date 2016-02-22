@@ -12,13 +12,12 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, '/dist/'),
-    filename: '[name]-[hash].min.js'
+    filename: '[name].min.js'
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.tpl.html',
-      inject: 'body',
       filename: 'index.html',
       favicon: 'favicon.ico'
     }),
