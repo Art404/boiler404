@@ -8,20 +8,21 @@ var StatsPlugin = require('stats-webpack-plugin');
 
 module.exports = {
   entry: [
-    path.join(__dirname, 'src/client.js')
+    path.resolve(__dirname, 'src/client.js')
   ],
   output: {
-    path: path.join(__dirname, '/dist/'),
-    filename: '[name].min.js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].min.js',
+    publicPath: '/'
   },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.tpl.html',
       inject: 'body',
       filename: 'index.html',
       favicon: 'favicon.ico'
     }),
+    new webpack.optimize.OccurenceOrderPlugin(),
     new ExtractTextPlugin('[name]-[hash].min.css'),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {

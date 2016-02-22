@@ -8,7 +8,6 @@ import ProjectDetail from './components/ProjectDetail/ProjectDetail'
 const createBrowserHistory = require('history/lib/createBrowserHistory')
 const history = createBrowserHistory()
 
-
 export default (
   <Router history={history}>
     <Route path="/" component={App}>
