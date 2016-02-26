@@ -55,3 +55,17 @@
 .About-member-role {
   font-weight: 700;
 }
+
+.About-linkouts {
+  margin-top: 10px;
+}
+
+.About-linkout {
+  color: inherit;
+  display: block;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+

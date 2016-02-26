@@ -61,6 +61,23 @@ class About extends React.Component {
     return <Grid cards={gridCards} />
   }
 
+  getPressUrls(db, active) {
+    let urls = []
+
+    Object.keys(db).map((d, i) => {
+      d = db[d]
+      if (d.additional && !isEmpty(d.additional.press)) {
+        d.additional.press.forEach((p) => {
+          if (p.publication === active) {
+            urls.push(p.url)
+          }
+        })
+      }
+    })
+
+    return urls
+  }
+
   getPressLinks (db) {
     let press = []
 
@@ -82,8 +99,11 @@ class About extends React.Component {
           key={i}
           className="About-press-link"
           onClick={() => {
+            const isActive = this.state.activePress === p
+
             this.setState({
-              'activePress': this.state.activePress === p ? null : p
+              'activePress': isActive ? null : p,
+              'urls': isActive ? null : this.getPressUrls(db, p)
             })
           }}>
           {isLast ?
@@ -106,7 +126,7 @@ class About extends React.Component {
 
   render () {
     if (isEmpty(this.props.db)) return null
-    const {db, squad} = this.props, {activePress} = this.state
+    const {db, squad} = this.props, {activePress, urls} = this.state
 
     return (
       <div className="About">
@@ -141,6 +161,13 @@ class About extends React.Component {
               {' - UNFILTER'}
             </span>
             </span>
+            <div className="About-linkouts">
+              {urls.map((u, i) => (
+                 <a className="About-linkout" href={u} key={i}>
+                  {'↗ '}{u}
+                 </a>
+              ))}
+            </div>
           </div> : null}
         <div className="About-grid">
           {this.getPressProjects(db, activePress)}
