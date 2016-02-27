@@ -5,10 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/babel-node server",
-    "postinstall": "node deploy",
-    "build": "rimraf dist && set NODE_ENV=production && webpack --config ./webpack.production.config.js --progress --profile --colors",
-    "eslint": "eslint .",
-    "jscs": "jscs ."
+    "postinstall": "node deploy"
   },
   "author": "Art404",
   "license": "ISC",

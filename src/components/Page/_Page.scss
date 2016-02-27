@@ -1,3 +1,7 @@
 .Page {
+  min-height: 100vh;
   min-width: 960px;
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(center);
 }

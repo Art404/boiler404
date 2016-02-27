@@ -1,27 +1,25 @@
 import React from 'react'
-import  { connect } from 'react-redux'
+import {connect} from 'react-redux'
 
 class Page extends React.Component {
   static displayName = 'Page';
 
   static propTypes = {
-    'main': React.PropTypes.object,
-    'agent': React.PropTypes.string,
-    'params': React.PropTypes.object,
-    'db': React.PropTypes.object
+    'dispatch': React.PropTypes.string,
+    'sendAction': React.PropTypes.func
   };
 
   render () {
-    const {main, agent, params, dispatch} = this.props
+    const {dispatch} = this.props
 
-    console.log('props', this.props)
     return (
       <div className="Page">
-        <button onClick={() => {
+        <button style={{'marginRight': 20}} onClick={() => {
           dispatch({
             type: 'sendAction'
-          })
-        }}>Send Action</button>
+          })}}>
+          {'Send Action'}
+        </button>
         <p>{this.props.sendAction}</p>
       </div>
     )
@@ -29,6 +27,5 @@ class Page extends React.Component {
 }
 
 export default connect((state)=> {
-  console.log(state)
   return state
 })(Page)
