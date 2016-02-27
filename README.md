@@ -38,7 +38,6 @@ DEPLOY:
 ├── /dist/                       # Compiled output
 ├── /node_modules/               # 3rd-party libraries and utilities
 ├── /src/                        # Source code of the client application
-│   ├── /actions/                # Action creators that allow to trigger a dispatch to stores
 │   ├── /components/             # React components
 |       |── /test/               # React components unit tests
 │   ├── /images/                 # Image assets
