@@ -1,32 +1,15 @@
-import alt from '../alt'
-import AppActions from '../actions/AppActions'
-import {cloneDeep, findKey} from 'lodash'
-import MobileDetect from 'mobile-detect'
-import request from 'superagent'
+import { createStore, combineReducers } from 'redux'
 
-class AppStore {
-  constructor() {
-    const md = new MobileDetect(window.navigator.userAgent)
-    this.bindActions(AppActions)
-    this.state = {
-      'agent': md.mobile() ? 'mobile' : 'desktop',
-      'sideOpen': false
-    }
-    this.getDB()
-  }
+const sendAction = (state = 'actionStarted', action) => {
+  console.log(action)
+  return state + 1
+}
 
-  toggleSidebar () {
-    this.setState({
-      'sideOpen': !this.state.sideOpen
-    })
-  }
+const clickButton = (state = 'clickButton', action) => state
 
-  getDB () {
-    request.get('/getDB').end((err, resp) => {
-      if (err) console.error(err)
-      else this.setState(resp.body)
-    })
-  }
- }
+const artPost = combineReducers({
+  sendAction,
+  clickButton
+})
 
-export default alt.createStore(AppStore, 'AppStore')
+export default createStore(artPost)

@@ -1,4 +1,5 @@
 import React from 'react'
+import  { connect } from 'react-redux'
 
 class Page extends React.Component {
   static displayName = 'Page';
@@ -11,14 +12,23 @@ class Page extends React.Component {
   };
 
   render () {
-    const {main, agent, params} = this.props
+    const {main, agent, params, dispatch} = this.props
 
+    console.log('props', this.props)
     return (
       <div className="Page">
-        <button>Send Action</button>
+        <button onClick={() => {
+          dispatch({
+            type: 'sendAction'
+          })
+        }}>Send Action</button>
+        <p>{this.props.sendAction}</p>
       </div>
     )
   }
 }
 
-export default Page
+export default connect((state)=> {
+  console.log(state)
+  return state
+})(Page)
