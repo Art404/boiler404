@@ -1,11 +1,11 @@
 import '../../styles/_Main.scss'
-import React, {cloneElement} from 'react'
+import React, { cloneElement } from 'react'
 import { Provider } from 'react-redux'
 import AppStore from '../../stores/AppStore'
 
 import Navigation from '../Navigation/Navigation'
 import cn from 'classnames'
-import {isEqual} from 'lodash'
+import { isEqual } from 'lodash'
 
 class App extends React.Component {
   static displayName = 'App';

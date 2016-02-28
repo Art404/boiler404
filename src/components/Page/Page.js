@@ -1,6 +1,10 @@
 import React from 'react'
 import  { connect } from 'react-redux'
 
+import AddPost from '../AddPost/AddPost'
+import PostList from '../PostList/PostList'
+import Footer from '../Footer/Footer'
+
 class Page extends React.Component {
   static displayName = 'Page';
 
@@ -12,23 +16,22 @@ class Page extends React.Component {
   };
 
   render () {
-    const {main, agent, params, dispatch} = this.props
+    const { main, 
+            agent, 
+            params } = this.props
 
-    console.log('props', this.props)
+    // console.log('props', this.props)
     return (
       <div className="Page">
-        <button onClick={() => {
-          dispatch({
-            type: 'sendAction'
-          })
-        }}>Send Action</button>
-        <p>{this.props.sendAction}</p>
+        <AddPost />
+        <PostList />
+        <Footer />
       </div>
     )
   }
 }
 
 export default connect((state)=> {
-  console.log(state)
+  console.log('POST-TEXT: ', state.post.text)
   return state
 })(Page)

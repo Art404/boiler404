@@ -1,12 +1,9 @@
-import alt from '../alt'
+let nextPostId = 0
 
-class AppActions {
-  constructor() {
-    this.generateActions(
-      'toggleSidebar',
-      'listenToDB'
-    )
-  }
+export const addPost = (text) => {
+	return {
+		type: 'ADD_POST',
+		id: nextPostId++,
+		text
+	}
 }
-
-export default alt.createActions(AppActions)
