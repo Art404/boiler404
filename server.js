@@ -4,23 +4,10 @@ import webpack from 'webpack'
 import webpackMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 import config from './webpack.config.js'
-// import Firebase from 'firebase'
-
-// const fire = new Firebase(process.env.firebase_url)
 
 const isDeveloping = process.env.NODE_ENV !== 'production'
 const port = isDeveloping ? 3000 : process.env.PORT
 const app = express()
-
-// let snapshot = null
-
-// fire.on('value', (data) => {
-//   snapshot = data.val()
-// })
-
-// app.use('/getDB', (req, res) => {
-//   res.send(snapshot).end()
-// })
 
 if (isDeveloping) {
   const compiler = webpack(config)

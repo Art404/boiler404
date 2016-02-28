@@ -4,7 +4,7 @@ import Router from 'react-router'
 import {createHistory} from 'history'
 import routes from './routes'
 
-let history = createHistory()
+const history = createHistory()
 
 ReactDom.render(
   <Router history={history}>{routes}</Router>,

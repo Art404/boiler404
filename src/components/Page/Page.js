@@ -31,7 +31,4 @@ class Page extends React.Component {
   }
 }
 
-export default connect((state)=> {
-  console.log('POST-TEXT: ', state.post.text)
-  return state
-})(Page)
+export default connect()(Page)

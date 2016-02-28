@@ -1,4 +1,4 @@
-import { createStore, combineReducers } from 'redux'
+import {createStore, combineReducers} from 'redux'
 
 const post = (state = {}, action) => {
 	switch (action.type) {
