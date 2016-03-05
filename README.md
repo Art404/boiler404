@@ -6,6 +6,8 @@
 
 Isomorphic, React, ES6, Webpack based starter kit for quickly starting web app projects tailored for [art404](http://art404.com).
 
+> Based off a fork of Richard Krawll's [react-starter](https://github.com/richardkall/react-starter)
+
 # Usage
 
 ### Environment Variables
