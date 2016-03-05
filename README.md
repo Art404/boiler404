@@ -39,8 +39,9 @@ $ npm start
 
 DEPLOY:
 
-* add new git commit
-* `git push heroku master`
+```bash
+$ git push heroku master
+```
 
 # Features
 
