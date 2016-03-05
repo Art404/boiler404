@@ -1,0 +1,9 @@
+.Home {
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+  @include flex-direction(column);
+  height: 100%;
+  min-width: 100vw;
+}
+

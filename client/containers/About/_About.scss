@@ -1,0 +1,7 @@
+.About {
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+  min-height: 100vw;
+  min-width: 100vw;
+}
