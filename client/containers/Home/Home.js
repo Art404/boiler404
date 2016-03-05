@@ -6,7 +6,7 @@ class Home extends React.Component {
   render () {
     return (
       <div className="Home">
-        <h1>{'Home Page!'}</h1>
+        <h1>{'Home Page'}</h1>
         <p>
           {`I think that’s a responsibility that I have, to push possibilities, to show people,
             this is the level that things could be at. So when you get something that has the name

@@ -1,7 +1,6 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Art404/platform404/master/boiler404.png" />
+  <img src="https://raw.githubusercontent.com/Art404/boiler404/master/boiler404.png" />
 </p>
-
 
 # boiler404
 
@@ -13,7 +12,7 @@ Isomorphic, React, ES6, Webpack based starter kit for quickly starting web app p
 
 Variable | Description
 :------- | :----------
-firebase\_url | Optional Firebase server to listen to, will get adde to the `app` prop at the top level container.
+firebase\_url | Optional Firebase server to listen to, will get added to the `app` prop at the top level container.
 
 
 ```bash
@@ -21,6 +20,12 @@ $ npm install
 ```
 
 Start development server:
+
+```bash
+$ npm run start:dev
+```
+
+Start with firebase:
 
 ```bash
 $ npm run firebase_url=XXX start:dev
