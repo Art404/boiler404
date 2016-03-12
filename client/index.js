@@ -1,5 +1,5 @@
-//if (process.env.BROWSER) require('./styles/_Main.scss')
-import styles from './styles/_Main.scss'
+// if (process.env.BROWSER) require('./styles/_Main.scss')
+import './styles/_Main.scss'
 import {Provider} from 'react-redux'
 import React from 'react'
 import configureStore from './store/configureStore'

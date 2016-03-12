@@ -1,9 +1,9 @@
 import React from 'react'
 
 class Home extends React.Component {
-  static displayName = 'Home';
+  static displayName = 'Home'
 
-  render () {
+  render() {
     return (
       <div className="Home">
         <h1>{'Home Page'}</h1>

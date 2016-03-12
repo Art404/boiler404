@@ -1,9 +1,9 @@
 import React from 'react'
 
 class About extends React.Component {
-  static displayName = 'About';
+  static displayName = 'About'
 
-  render () {
+  render() {
     return (
       <div className="About">
         <h1>{'About Page!'}</h1>

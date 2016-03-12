@@ -1,5 +1,7 @@
 {
   "parser": "babel-eslint",
+  "plugins": ["react"],  
+  "extends": ["airbnb/base", "plugin:react/recommended"],
   "env": {
     "browser": true,
     "node": true,
@@ -27,10 +29,10 @@
     "curly": 0,
     "no-trailing-spaces": 0,
     "no-mixed-spaces-and-tabs": 0,
-    // React
-    "react/jsx-key": 1,
-    "react/prefer-es6-class": 1,
-    "react/prop-types": 1
-  },
-  "plugins": ["react"]
+    "quote-props": 0,
+    "no-console": 0,
+    "comma-dangle": 0,
+    "react/display-name": 0,
+    "object-curly-spacing": 0
+  }
 }

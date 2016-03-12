@@ -6,5 +6,5 @@ import client from './client'
 export default combineReducers({
   app,
   client,
-  layout
+  layout,
 })
