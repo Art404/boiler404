@@ -30,7 +30,7 @@ $ npm run start:dev
 Start with firebase:
 
 ```bash
-$ npm run firebase_url=XXX start:dev
+$ npm run firebase_url="XXX" start:dev
 ```
 
 Start production server:
