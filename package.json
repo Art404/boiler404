@@ -12,16 +12,16 @@
     "test-watch": "NODE_ENV=test mocha -R min -w"
   },
   "devDependencies": {
-    "babel-eslint": "~5.0.0",
+    "babel-eslint": "^6.0.4",
     "babel-plugin-react-transform": "~2.0.0",
     "eslint-config-airbnb": "^6.1.0",
     "eslint-loader": "^1.3.0",
     "eslint-plugin-react": "^4.1.0",
-    "eslint": "~2.2.0",
-    "nock": "~7.2.2",
     "nodemon": "~1.9.1",
     "react-transform-hmr": "~1.0.2",
     "webpack-dev-middleware": "~1.5.1",
+    "eslint": "^2.10.2",
+    "eslint-config-airbnb": "^6.2.0",
     "webpack-hot-middleware": "~2.7.1"
   },
   "dependencies": {
@@ -38,8 +38,6 @@
     "cookies-js": "^1.2.2",
     "cors": "^2.7.1",
     "css-loader": "~0.23.1",
-    "eslint": "^2.4.0",
-    "eslint-config-airbnb": "^6.2.0",
     "estraverse-fb": "^1.3.1",
     "express": "~4.13.4",
     "extract-text-webpack-plugin": "~1.0.1",
