@@ -43,11 +43,18 @@ export default function reactMiddleware (req, res) {
 
     return store.dispatch(hydrateInitialStore(req)).then(() => {
       const initialState = JSON.stringify(store.getState())
-      const content = renderToString(
-        <Provider store={store}>
-          <RouterContext {...renderProps} />
-        </Provider>
-      )
+      let content
+
+      try {
+        content = renderToString(
+          <Provider store={store}>
+            <RouterContext {...renderProps} />
+          </Provider>
+        )
+      } catch(e) {
+        console.log('ERROR RENDERING APP', e)
+        process.exit()
+      }
 
       return res.render('index', {content, assets, initialState})
     })
